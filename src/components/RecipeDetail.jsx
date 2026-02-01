@@ -11,8 +11,8 @@ const RecipeDetail = ({ recipe, onBack, userIngredients = [] }) => {
   const [currentStep, setCurrentStep] = useState(0);
   const [completedSteps, setCompletedSteps] = useState([]);
 
-  // 유튜브 비디오 (데모)
-  const youtubeVideos = getYoutubeVideos(recipe.name);
+  // 유튜브 비디오 (레시피 객체 전달로 실제 정보 사용)
+  const youtubeVideos = getYoutubeVideos(recipe);
 
   // 재료 보유 여부 확인
   const hasIngredient = (ingredient) => {
@@ -77,6 +77,18 @@ const RecipeDetail = ({ recipe, onBack, userIngredients = [] }) => {
           <h1>{recipe.name}</h1>
           <p>{recipe.nameEn}</p>
         </div>
+        {/* 유튜브 원본 영상 바로가기 */}
+        {recipe.youtube && (
+          <a 
+            href={recipe.youtube.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="youtube-badge"
+          >
+            <Youtube size={16} />
+            <span>백종원 원본 영상</span>
+          </a>
+        )}
       </div>
 
       {/* 기본 정보 */}
