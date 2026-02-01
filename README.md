@@ -1,16 +1,176 @@
-# React + Vite
+# 🍳 냉장고 레시피 - 재료 기반 요리 추천 앱
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+냉장고 속 재료를 촬영하면 만들 수 있는 요리를 추천해주는 웹 앱입니다.
 
-Currently, two official plugins are available:
+![React](https://img.shields.io/badge/React-18-blue)
+![Vite](https://img.shields.io/badge/Vite-7-purple)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 📱 주요 기능
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 1. 📷 카메라 / 사진 촬영
+- 냉장고 속 재료를 카메라로 촬영
+- 갤러리에서 기존 사진 업로드 가능
+- AI가 자동으로 재료 인식
 
-## Expanding the ESLint configuration
+### 2. 🖼️ 갤러리
+- 촬영한 재료 사진들 보관
+- 각 사진별 인식된 재료 목록 확인
+- 사진 상세보기 및 삭제
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 3. 🥬 재료 관리
+- AI가 인식한 재료 자동 추가
+- 직접 재료 입력 가능
+- 빠른 추가 버튼으로 자주 쓰는 재료 원클릭 추가
+- 재료 검색 및 관리
+
+### 4. 🍳 레시피 추천
+- 보유한 재료 기반 맞춤 레시피 추천
+- 재료 일치율(%) 표시
+- 필수 재료 보유 여부 표시
+- 난이도, 조리시간, 칼로리 정보
+
+### 5. 📖 레시피 상세
+- 단계별 조리법 (체크리스트 형태)
+- 보유/미보유 재료 확인
+- 요리 팁 제공
+- 진행 상황 추적
+
+### 6. 📺 유튜브 연동
+- 각 레시피별 관련 유튜브 영상 안내
+- 버튼 클릭으로 YouTube 검색 결과로 이동
+
+---
+
+## 🚀 실행 방법
+
+### 필수 조건
+- **Node.js** 18.0 이상
+- **npm** 또는 **yarn**
+
+### 설치 및 실행
+
+```bash
+# 1. 저장소 클론
+git clone https://github.com/musahoya/cmgldtmglsvketltpfls.git
+
+# 2. 프로젝트 폴더로 이동
+cd cmgldtmglsvketltpfls
+
+# 3. 의존성 설치
+npm install
+
+# 4. 개발 서버 실행
+npm run dev
+```
+
+### 접속
+브라우저에서 **http://localhost:5173** 접속
+
+---
+
+## 📦 빌드 및 배포
+
+```bash
+# 프로덕션 빌드
+npm run build
+
+# 빌드 결과물 미리보기
+npm run preview
+```
+
+빌드된 파일은 `dist/` 폴더에 생성됩니다.
+
+---
+
+## 🗂️ 프로젝트 구조
+
+```
+src/
+├── App.jsx              # 메인 앱 컴포넌트
+├── App.css              # 전체 스타일
+├── index.css            # 기본 스타일
+├── main.jsx             # 앱 엔트리 포인트
+│
+├── components/          # UI 컴포넌트
+│   ├── Camera.jsx       # 카메라/촬영 기능
+│   ├── Gallery.jsx      # 사진 갤러리
+│   ├── Ingredients.jsx  # 재료 관리
+│   ├── Recipes.jsx      # 레시피 목록
+│   ├── RecipeDetail.jsx # 레시피 상세
+│   └── Navigation.jsx   # 하단 네비게이션
+│
+├── services/            # 서비스 로직
+│   └── recipeService.js # 레시피 데이터 & 검색
+│
+└── store/               # 상태 관리
+    └── useStore.js      # Zustand 스토어
+```
+
+---
+
+## 🛠️ 기술 스택
+
+| 분류 | 기술 |
+|------|------|
+| **프레임워크** | React 18 |
+| **빌드 도구** | Vite 7 |
+| **상태 관리** | Zustand |
+| **아이콘** | Lucide React |
+| **스타일** | CSS (커스텀) |
+| **저장소** | LocalStorage (브라우저) |
+
+---
+
+## 🍽️ 포함된 레시피 (15종)
+
+| 한식 | 기타 |
+|------|------|
+| 김치찌개 | 파스타 |
+| 된장찌개 | 토마토계란볶음 |
+| 제육볶음 | |
+| 계란말이 | |
+| 볶음밥 | |
+| 참치김치볶음밥 | |
+| 소고기미역국 | |
+| 콩나물국 | |
+| 오이무침 | |
+| 감자전 | |
+| 감자조림 | |
+| 스팸김치찌개 | |
+| 부대찌개 | |
+
+---
+
+## 📝 사용 방법
+
+1. **촬영 탭**에서 냉장고 재료 사진 촬영
+2. **재료 탭**에서 인식된 재료 확인 & 추가 재료 입력
+3. **레시피 탭**에서 만들 수 있는 요리 확인
+4. 레시피 클릭하여 상세 조리법 보기
+5. **영상 보기** 버튼으로 YouTube 요리 영상 시청
+
+---
+
+## 🔮 향후 개선 사항
+
+- [ ] 실제 AI 이미지 인식 API 연동
+- [ ] 유튜브 API 연동으로 실제 영상 표시
+- [ ] 레시피 즐겨찾기 기능
+- [ ] 장보기 목록 생성
+- [ ] 더 많은 레시피 추가
+- [ ] PWA 지원 (오프라인 사용)
+
+---
+
+## 📄 라이선스
+
+MIT License
+
+---
+
+## 👨‍💻 개발자
+
+Made with ❤️ for cooking lovers!
